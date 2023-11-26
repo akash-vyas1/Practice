@@ -40,7 +40,7 @@ public class JwtTokenGenerator extends OncePerRequestFilter {
             // System.out.println("inside JWT generator and secret key is :\n" +
             // key.toString());
             SecretKey key = Keys.hmacShaKeyFor(SecurityConstants.KEY.getBytes(StandardCharsets.UTF_8));
-
+            System.out.println("Role from Jwt generator filter :" + getRole(auth.getAuthorities()));
             String jwt_token = Jwts.builder()
                     .issuer("Akash Vyas")
                     .subject("JWT Token")
